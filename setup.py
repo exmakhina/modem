@@ -10,7 +10,7 @@ setup(
     long_description = open('doc/source/about.rst').read(),
     license      = 'MIT',
     keywords     = 'xmodem ymodem zmodem protocol',
-    packages     = ['modem'],
+    packages     = setuptools.find_packages(),
     package_data = {'': ['doc/*.TXT']},
 )
 
