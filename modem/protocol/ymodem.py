@@ -26,10 +26,13 @@ class YMODEM(XMODEM):
         failure.
         '''
 
-        # Get a list of files to send
-        filenames = glob.glob(pattern)
-        if not filenames:
-            return True
+        if isinstance(pattern, str):
+            # Get a list of files to send
+            filenames = glob.glob(pattern)
+            if not filenames:
+                return True
+        else:
+            filenames = pattern
 
         # initialize protocol
         error_count = 0
